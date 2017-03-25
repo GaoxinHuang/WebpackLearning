@@ -7,11 +7,15 @@
     "dev": "webpack -d --watch",
     "prod": "webpack -p"
   },
-  "author": "",
+  "author": "Gaoxin",
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^0.27.3",
+    "extract-text-webpack-plugin": "^2.1.0",
     "html-webpack-plugin": "^2.28.0",
+    "install": "^0.8.7",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.16.0",
     "webpack": "^2.3.1"
   }
 }
