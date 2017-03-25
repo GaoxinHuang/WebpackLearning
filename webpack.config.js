@@ -13,7 +13,7 @@ module.exports = {
     module:{
         rules:[
             // {test: /\.css$/, use: ['style-loader','css-loader','sass-loader']}
-            {test: /\.scss$/, use: ExtractTextPlugin.extract({
+            {test: /\.scss$/, use: ExtractTextPlugin.extract({//如果是css文件, 则 {test: /\.css$/,
                 fallback: "style-loader",
                 use:['css-loader','sass-loader'],
                 publicPath: "./dist"  //2.3.0的版本无法用上,所以只能定义在filename里
