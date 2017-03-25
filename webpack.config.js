@@ -16,7 +16,7 @@ module.exports = {
             {test: /\.scss$/, use: ExtractTextPlugin.extract({
                 fallback: "style-loader",
                 use:['css-loader','sass-loader'],
-                publicPath: "./dist"  //不知道为什么没用上
+                publicPath: "./dist"  //2.3.0的版本无法用上,所以只能定义在filename里
             })}
         ]
     },
@@ -29,10 +29,10 @@ module.exports = {
                 // },
                 filename:'./dist/index.html',
                 hash:true ,//给 压缩文件的js文件加密,让人找不到
-                template: 'index.html'
+                template: 'index.html'  //index.html读取的模板文件,文件名随意,建议设计成在src外的index.html
             }),
-        new ExtractTextPlugin({
-            filename: 'app.css',
+        new ExtractTextPlugin({  //webpack 2 新版本的修改,只能在webpack2 里migrating下看
+            filename: './dist/app.css',
             disable: false,
             allChunks: true
         })
